@@ -2,14 +2,56 @@
 windowsをクリーンインストールしたときに, 環境を再構築するための手順を残す.
 
 ## 目次
-- [OneDrive](#onedrive)
-- [Chrome](#chrome)
 - [AviUtl2](#aviutl2)
+- [Chrome](#chrome)
+- [Cloudflare](#cloudflare)
 - [Discord](#discord)
 - [Git](#git)
+- [nodejs](#nodejs)
+- [OneDrive](#onedrive)
 - [PowerToys](#powertoys)
-- [VScode](#vscode)
 - [VOICEVOX](#voicevox)
+- [VScode](#vscode)
+
+## AviUtl2
+[AviUtl2](https://spring-fragrance.mints.ne.jp/aviutl/)をダウンロードする.
+
+## Chrome
+[Google Chrome](https://www.google.com/intl/ja_jp/chrome/)をダウンロードする.
+
+## Cloudflare
+1. [winget](https://learn.microsoft.com/ja-jp/windows/package-manager/winget/)をダウンロード・インストールする.
+2. `winget install --id Cloudflare.cloudflared`コマンドでCloudflareをインストールする.
+
+## Discord
+[Discord](https://discord.com/)をダウンロードする.
+
+## Git
+[Git](https://gitforwindows.org/)をダウンロードする.
+1. インストーラーを起動する
+2. デフォルトエディタをVScodeにする
+3. HTTPS transport backendをOpenSSL libraryにする
+4. extra optionsは両方ともにチェックを入れる
+
+### 環境設定
+ユーザー名とメールアドレスを設定
+```
+git config --global user.name "hoge"
+git config --global user.email "fuga"
+```
+SSHキーを作成
+```
+ssh-keygen
+```
+
+## nodejs
+1. [nvm](https://github.com/coreybutler/nvm-windows/releases)をダウンロード・インストールする.
+2. `nvm list available`コマンドで利用可能なバージョンを確認
+3. `nvm install **`コマンドでnodejsをインストールする.
+4. `nvm use **`コマンドでnodejsを切り替える
+
+> [!NOTE]
+> npmコマンドが利用できないときは, windows power shellを管理者権限で起動し, `Set-ExecutionPolicy RemoteSigned`を実行する.
 
 ## OneDrive
 OneDriveをwindows環境から除去する.
@@ -55,36 +97,11 @@ rd /s /q "%LocalAppData%\Microsoft\OneDrive"
 rd /s /q "%ProgramData%\Microsoft OneDrive"
 ```
 
-## Chrome
-[Google Chrome](https://www.google.com/intl/ja_jp/chrome/)をダウンロードする.
-
-## AviUtl2
-[AviUtl2](https://spring-fragrance.mints.ne.jp/aviutl/)をダウンロードする.
-
-## Discord
-[Discord](https://discord.com/)をダウンロードする.
-
-## Git
-[Git](https://gitforwindows.org/)をダウンロードする.
-1. インストーラーを起動する
-2. デフォルトエディタをVScodeにする
-3. HTTPS transport backendをOpenSSL libraryにする
-4. extra optionsは両方ともにチェックを入れる
-
-### 環境設定
-ユーザー名とメールアドレスを設定
-```
-git config --global user.name "hoge"
-git config --global user.email "fuga"
-```
-SSHキーを作成
-```
-ssh-keygen
-```
-
-
 ## PowerToys
 [PowerToys](https://github.com/microsoft/PowerToys/releases)をダウンロードする.
+
+## VOICEVOX
+[VOICEVOX](https://voicevox.hiroshiba.jp/)をダウンロードする.
 
 ## VScode
 [VScode](https://code.visualstudio.com/)をダウンロードする.
@@ -96,6 +113,3 @@ ssh-keygen
 - Markdown Checkboxes
 - Markdown Footnotes
 - Markdown Preview Github Styling
-
-## VOICEVOX
-[VOICEVOX](https://voicevox.hiroshiba.jp/)をダウンロードする.
