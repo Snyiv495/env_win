@@ -2,16 +2,28 @@
 windowsをクリーンインストールしたときに, 環境を再構築するための手順を残す.
 
 ## 目次
-- [AviUtl2](#aviutl2)
-- [Chrome](#chrome)
-- [Cloudflare](#cloudflare)
-- [Discord](#discord)
-- [Git](#git)
-- [nodejs](#nodejs)
-- [OneDrive](#onedrive)
-- [PowerToys](#powertoys)
-- [VOICEVOX](#voicevox)
-- [VScode](#vscode)
+- [Windowsの環境構築](#windowsの環境構築)
+  - [目次](#目次)
+  - [AviUtl2](#aviutl2)
+  - [Chrome](#chrome)
+  - [Cloudflare](#cloudflare)
+  - [Discord](#discord)
+  - [Git](#git)
+    - [環境設定](#環境設定)
+  - [Keyboard](#keyboard)
+    - [キーマッピング](#キーマッピング)
+    - [IMEの設定](#imeの設定)
+  - [nodejs](#nodejs)
+  - [OneDrive](#onedrive)
+    - [アカウントの同期を解除](#アカウントの同期を解除)
+    - [アンインストール](#アンインストール)
+    - [再インストールの予防](#再インストールの予防)
+    - [フォルダ自動生成の停止](#フォルダ自動生成の停止)
+    - [キャッシュの削除](#キャッシュの削除)
+  - [PowerToys](#powertoys)
+  - [VOICEVOX](#voicevox)
+  - [VScode](#vscode)
+    - [拡張機能](#拡張機能)
 
 ## AviUtl2
 [AviUtl2](https://spring-fragrance.mints.ne.jp/aviutl/)をダウンロードする.
@@ -43,6 +55,25 @@ SSHキーを作成
 ```
 ssh-keygen
 ```
+
+## Keyboard
+### キーマッピング
+CapsLockをCtrlにして, CtrlをCtrl(right)に変更する.
+1.  [win]+Rから**regedit**を実行
+2.  `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout`を選択
+3.  右クリックしてから[新規] > [バイナリ]を選択
+4.  名前を`Scancode Map`に設定
+5.  値をダブルクリックし, `00,00,00,00,00,00,00,00,03,00,00,00,1d,00,3a,00,1d,e0,1d,00,00,00,00,00`を入力
+   
+### IMEの設定
+1.  [設定] > [時刻と言語] >　[言語と地域] > [オプション] > [Microsoft IME] > [全般]を選択
+2.  以前のバージョンのIMEを使用を選択
+3.  詳細設定を開くを選択
+4.  キー設定 : [変更]を選択
+5.  変換キーの[入力/...]をIMEをオンに変更
+6.  変換キーの上記以外をカタカナに変更
+7.  無変換キーの[入力/...]をIMEオフに変更
+8.  無変換キーの上記以外をｶﾀｶﾅに変更
 
 ## nodejs
 1. [nvm](https://github.com/coreybutler/nvm-windows/releases)をダウンロード・インストールする.
